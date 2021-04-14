@@ -1,0 +1,59 @@
+/* Scss Document */
+
+
+.nj-header__group {
+	box-shadow:none!important;
+}
+.arrow-down {
+	background:url(../imgs/down-arrow.png) no-repeat right bottom;
+	padding-right:12px;
+	height:1rem;
+	line-height:9px;
+}
+
+.arrow-down-no {
+	height:1rem;
+	line-height:9px;
+}
+.nj-header__nav {
+	margin-right:50px;
+}
+
+.nj-header__search-icon {
+	height:1rem;
+	bottom:auto;
+	background:url(../imgs/search.png) no-repeat right top;
+	width:50px;
+	height:50px;
+	top:10rem;
+}
+
+.search-collapsable {
+	width:100%;
+	justify-content:center;
+	align-items:center;
+	.search-tag-in{
+		align-items:center;
+				 }
+	.nj-form-group {
+	padding-top:.5rem;	
+	
+					}
+	}
+
+.nj-header__nav-burger {
+	right:0!important;
+	left:auto!important;
+}
+
+.nj-header__head {
+	justify-content:left!important;
+	left:1rem!important;
+}
+
+$layout-breakpoint-mobile: 767px;
+@media (min-width: $layout-breakpoint-mobile) {
+  .nj-header__search-icon {
+   top:3rem;
+  }
+}

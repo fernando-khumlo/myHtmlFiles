@@ -1,0 +1,64 @@
+/* Scss Document */
+.nj-footer__baseline {
+  flex-direction: column;
+  align-items: center !important;
+}
+.nj-footer__baseline .nj-footer__logo {
+  margin-right: 0;
+}
+
+.collapse-btn-wrap {
+  flex-direction: row;
+  justify-content: space-between;
+}
+.collapse-btn-wrap h5 a {
+  font-size: 20px;
+  color: #757575;
+}
+.collapse-btn-wrap a {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+@media (min-width: 769px) {
+  .nj-footer__baseline {
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center;
+  }
+}
+
+@media (min-width: 769px) {
+  .nj-footer__logo {
+    margin-right: 4rem !important;
+  }
+}
+
+.nj-footer__baseline .nj-btn {
+  margin-top: 2rem;
+}
+@media (min-width: 769px) {
+  .nj-footer__baseline .nj-btn {
+    margin-left: 4rem;
+  }
+}
+
+@media (min-width: 769px) {
+  .border-bottom {
+    border-bottom: var(--nj-size-border-width) solid var(--border-color) !important;
+  }
+}
+
+@media (min-width: 769px) {
+  .footer-nav-mobile {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-nav-desktop {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=footer.css.map */

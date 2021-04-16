@@ -1,0 +1,72 @@
+/* Scss Document */
+
+.nj-footer__baseline  {
+	flex-direction: column;
+	align-items: center!important;
+	.nj-footer__logo {
+		margin-right:0;
+	}
+	
+}
+
+.collapse-btn-wrap {
+	flex-direction:row;
+	justify-content:space-between;
+	
+	h5 {
+		a {
+		font-size:20px;
+		color:#757575;
+		}
+	}
+	a{
+		font-weight:bold;
+		font-size:20px;
+	}
+}
+
+
+$bp-wider: "(min-width: 769px)";
+$bp-smaller: "(max-width: 768px)";
+
+.nj-footer__baseline  {
+ 
+  @media #{$bp-wider} {
+    flex-direction: row!important;
+    justify-content: center !important;
+	align-items: center;
+  }
+}
+
+.nj-footer__logo {
+	@media #{$bp-wider} {
+		margin-right:4rem!important;
+	}
+	}
+.nj-footer__baseline  {
+   .nj-btn {
+	   margin-top:2rem;
+	@media #{$bp-wider} {
+		margin-left:4rem;   
+	}
+   }
+}
+
+.border-bottom {
+	$--nj-size-border-width:0px;
+  @media #{$bp-wider} {
+	   border-bottom: var(--nj-size-border-width) solid var(--border-color) !important;}
+  }
+
+.footer-nav-mobile  {
+ 
+  @media #{$bp-wider} {
+    display:none
+  }
+}
+.footer-nav-desktop  {
+ 
+  @media #{$bp-smaller} {
+    display:none
+  }
+}

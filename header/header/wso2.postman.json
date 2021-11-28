@@ -1,0 +1,333 @@
+{
+	"info": {
+		"_postman_id": "ba9644ca-ac13-468b-b533-860e40a8bec8",
+		"name": "WSO2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "FintechHub",
+			"item": [
+				{
+					"name": "Create a new User Copy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"schemas\": [],\r\n\t\"name\": {\r\n\t\t\"familyName\": \"Dummy User\",\r\n\t\t\"givenName\": \"Test User\"\r\n\t},\r\n\t\"userName\": \"testUser\",\r\n\t\"password\": \"testPassword\",\r\n\t\"emails\": [{\r\n\t\t\"primary\": true,\r\n\t\t\"value\": \"test.home@email.com\",\r\n\t\t\"type\": \"home\"\r\n\t}, {\r\n\t\t\"value\": \"test.work@email.com\",\r\n\t\t\"type\": \"work\"\r\n\t}]\r\n}"
+						},
+						"url": "https://k8s-dev-wso2-idam.banking-sandbox.com/wso2/scim/Users",
+						"description": "Create a new User"
+					},
+					"response": []
+				},
+				{
+					"name": "Request 1-Get WSO2 AccessToken Copy 2",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"password": "DxaDcaNNMhyiHC6s2s9xOV7Ex7ka",
+								"username": "QbnQlo9lrKmk5I71QaX4udJA0Xka",
+								"saveHelperData": true,
+								"showPassword": false
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "password",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Openbanking2021",
+									"type": "text"
+								},
+								{
+									"key": "scope",
+									"value": "internal_application_mgt_create internal_application_mgt_delete internal_application_mgt_update internal_application_mgt_view ",
+									"type": "text"
+								}
+							]
+						},
+						"url": "https://k8s-dev-wso2-idam.banking-sandbox.com/oauth2/token"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Get the logged in User's details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{wso2_url}}/wso2/scim/Users",
+				"description": "Get the logged in User's details"
+			},
+			"response": []
+		},
+		{
+			"name": "Get the logged in User information in details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{wso2_url}}/wso2/scim/Users/me",
+				"description": "Get the logged in User information in details"
+			},
+			"response": []
+		},
+		{
+			"name": "Create a new User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"schemas\": [],\r\n\t\"name\": {\r\n\t\t\"familyName\": \"Dummy User\",\r\n\t\t\"givenName\": \"Test User\"\r\n\t},\r\n\t\"userName\": \"testUser\",\r\n\t\"password\": \"testPassword\",\r\n\t\"emails\": [{\r\n\t\t\"primary\": true,\r\n\t\t\"value\": \"test.home@email.com\",\r\n\t\t\"type\": \"home\"\r\n\t}, {\r\n\t\t\"value\": \"test.work@email.com\",\r\n\t\t\"type\": \"work\"\r\n\t}]\r\n}"
+				},
+				"url": "{{wso2_url}}/wso2/scim/Users",
+				"description": "Create a new User"
+			},
+			"response": []
+		},
+		{
+			"name": "Get User details by id",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "admin",
+						"username": "admin",
+						"saveHelperData": true,
+						"showPassword": false
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:9443/scim2/Roles?filter=displayName+co+AISP-ROLE",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "9443",
+					"path": [
+						"scim2",
+						"Roles"
+					],
+					"query": [
+						{
+							"key": "filter",
+							"value": "displayName+co+AISP-ROLE"
+						}
+					]
+				},
+				"description": "Get User details by id"
+			},
+			"response": []
+		},
+		{
+			"name": "Update the User details by id",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"schemas\": [],\r\n\t\"name\": {\r\n\t\t\"familyName\": \"Dummy User\",\r\n\t\t\"givenName\": \"Test User\"\r\n\t},\r\n\t\"userName\": \"testUser\",\r\n\t\"emails\": [{\r\n\t\t\"value\": \"test.work@outlook.com\",\r\n\t\t\"type\": \"work\"\r\n\t}, {\r\n\t\t\"value\": \"test.home@gmail.com\",\r\n\t\t\"type\": \"home\"\r\n\t}]\r\n}"
+				},
+				"url": "{{wso2_url}}/wso2/scim/Users/b21fe745-201f-4f8a-b1f4-67fb6b02bce3",
+				"description": "Update the User details by id"
+			},
+			"response": []
+		},
+		{
+			"name": "Filter and search for User data",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{wso2_url}}/wso2/scim/Users?filter=userName+Eq+%22testUser%22",
+					"host": [
+						"{{wso2_url}}"
+					],
+					"path": [
+						"wso2",
+						"scim",
+						"Users"
+					],
+					"query": [
+						{
+							"key": "filter",
+							"value": "userName+Eq+%22testUser%22"
+						}
+					]
+				},
+				"description": "Filter and search for User data"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete the User",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"url": "{{wso2_url}}/wso2/scim/Users/b21fe745-201f-4f8a-b1f4-67fb6b02bce3",
+				"description": "Delete the User"
+			},
+			"response": []
+		},
+		{
+			"name": "Get list of all Groups",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{wso2_url}}/wso2/scim/Groups",
+				"description": "Get list of all Groups"
+			},
+			"response": []
+		},
+		{
+			"name": "Create a new Group with members(Users)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"displayName\": \"DeveloperPortal\",\r\n\t\"members\": [{\r\n\t\t\"value\": \"b21fe745-201f-4f8a-b1f4-67fb6b02bce3\",\r\n\t\t\"display\": \"testUser\"\r\n\t}]\r\n}"
+				},
+				"url": "{{wso2_url}}/wso2/scim/Groups",
+				"description": "Create a new Group with members(Users)"
+			},
+			"response": []
+		},
+		{
+			"name": "Update the Groups details by id",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"displayName\": \"DevPortal\"\r\n}"
+				},
+				"url": "{{wso2_url}}/wso2/scim/Groups/11a0cdba-4c3f-4ec7-9dd3-6401deb03b0a",
+				"description": "Update the Groups details by id"
+			},
+			"response": []
+		},
+		{
+			"name": "Filter and search for Group data",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{wso2_url}}/wso2/scim/Groups?filter=displayNameEqDevPortal",
+					"host": [
+						"{{wso2_url}}"
+					],
+					"path": [
+						"wso2",
+						"scim",
+						"Groups"
+					],
+					"query": [
+						{
+							"key": "filter",
+							"value": "displayNameEqDevPortal"
+						}
+					]
+				},
+				"description": "Filter and search for Group data"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete the Group",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"url": "{{wso2_url}}/wso2/scim/Groups/11a0cdba-4c3f-4ec7-9dd3-6401deb03b0a",
+				"description": "Delete the Group"
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": {
+			"password": "Openbanking2021",
+			"username": "admin"
+		}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "wso2_url",
+			"value": "https://k8s-dev-wso2-idam.banking-sandbox.com"
+		}
+	]
+}
